@@ -1,0 +1,15 @@
+<P>User in ID {{serverId}} is {{serverName}}</P>
+<label>Task name</label>
+      <input type="text"
+    class="form-control"
+    [(ngModel)]="serverUser"> -->
+
+<button class="btn btn-primary"[disabled]="!allowNewServer"
+(afterClick)="onCreateServer()">Add a task</button>
+
+<p *ngIf="taskCreated">Task created was {{ serverUser}}</p>
+
+<p [ngStyle]="{backgroundColor: getColor()}"
+[ngClass]="{ 'online': serverCreationStatus==='online'}">{{'Server' }} with ID {{ serverId }} is {{ getServerStatus() }}</p>
+<app-server *ngFor="let server of servers"></app-server>
+
