@@ -9,8 +9,8 @@ import { withLatestFrom } from "rxjs";
     styleUrls: ['./server.component.css']
 })
 export class ServerComponent{
-    allowNewServer =false;
-    serverCreationStatus="No Task was created ";
+    allowNewServer =true;
+    serverCreationStatus='online';
     serverUser='TestServer';
     constructor(){
         setTimeout(() => {
@@ -18,13 +18,13 @@ export class ServerComponent{
         },2000);
     }
     
-serverId=10;taskCreated=false;
+serverId=10;taskCreated=true;
 serverName='monica';
 servers=[];
 
 onCreateServer():void{
     this.taskCreated=true;
-    this.serverCreationStatus='online';
+    this.serverCreationStatus='online'
     this.serverCreationStatus="server"
 }
 
