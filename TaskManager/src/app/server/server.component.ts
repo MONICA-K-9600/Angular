@@ -1,5 +1,6 @@
 import { ReturnStatement } from "@angular/compiler";
 import { Component } from "@angular/core";
+import { Event } from "@angular/router";
 import { withLatestFrom } from "rxjs";
 
 @Component({
@@ -16,17 +17,17 @@ export class ServerComponent{
             this.allowNewServer = true;
         },2000);
     }
-    ngOnInit(){}
+    
 serverId=10;taskCreated=false;
 serverName='monica';
 servers=[];
 
-onCreateServer(){
+onCreateServer():void{
     this.taskCreated=true;
     this.serverCreationStatus='online';
+    this.serverCreationStatus="server"
 }
-onUpdateTaskName(event:any){
-    this.serverUser = (<HTMLInputElement>event.target).value;}
+
 getServerStatus(){
     return this.serverCreationStatus;
 }
